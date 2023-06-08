@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Evgeny Bobkunov</title>
   
   <style>
-    /* Global styles */
+
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -13,7 +13,7 @@
       background-color: #fffbff;
     }
 
-    /* Header styles */
+
     header {
       background-color: #85736f;
       color: #fff;
@@ -31,73 +31,67 @@
     }
 
     div#leftbar {
-        float: left;
-        width: 300px;
-        height: 100%;
-        padding: 20px;
-        color: #534340;
+      float: left;
+      width: 300px;
+      height: 100%;
+      padding: 20px;
+      color: #534340;
     }
 
     div#photo {
-        /* crop photo */
-        width: 300px;
-        height: 300px;
-        overflow: hidden;
-        border-radius: 50%;
-        border: 5px solid #fff;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        font-size: 16px;
-    
-        
+      width: 300px;
+      height: 300px;
+      overflow: hidden;
+      border-radius: 50%;
+      border: 5px solid #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      font-size: 16px;     
     }
 
     div#social {
-        margin-top: 20px;
-        /* align social links */
-        display: flex;
-        justify-content: space-evenly;
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-evenly;
     }
 
+
     div#music {
-        margin: 20px 20px;
-        padding: 20px;
-        background-color: #faf1f4;
-        color: #3c0700;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      margin: 20px 20px;
+      padding: 20px;
+      background-color: #faf1f4;
+      color: #3c0700;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
 
     div#albums {
-        text-align: center;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        display: flex;
-        justify-content: space-evenly;       
+      text-align: center;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-evenly;       
     }
 
     div#yandexmusic {
-        text-align: center;
-        margin : 20px 20px;
+      text-align: center;
+      margin : 20px 20px;
     }
 
     div#games {
-        margin: 20px 20px;
-        padding: 20px;
-        background-color: #faf1f4;
-        color: #3c0700;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      margin: 20px 20px;
+      padding: 20px;
+      background-color: #faf1f4;
+      color: #3c0700;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
 
     div#gamelogos {
-        text-align: center;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        display: flex;
-        justify-content: space-evenly;       
+      text-align: center;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-evenly;       
     }
 
-
-
-    /* Main content styles */
     main { 
       margin: 20px 20px;
       margin-left: 350px;
@@ -109,20 +103,20 @@
     }
 
     A {
-    color: #3c0700;
-   }
+      color: #3c0700;
+    }
 
-   A:visited {
-    color: #2c1510; 
-   }
+    A:visited {
+      color: #2c1510; 
+    }
 
-   A:active {
-    color: #410002; 
-   }
+    A:active {
+      color: #410002;
+    }
 
     A:hover {
-    color: #241a00;
-    text-decoration: none;
+      color: #241a00;
+      text-decoration: none;
     }
 
     section {
@@ -149,7 +143,6 @@
       margin-bottom: 5px;
     }
 
-    /* Footer styles */
     footer {
       background-color: #85736f;
       color: #fff;
@@ -159,26 +152,38 @@
     }
   </style>
 </head>
+
 <body>
+
   <header>
     <h1>Evgeny Bobkunov's page</h1>
   </header>
 
   <div id="leftbar">
+
     <div id="photo">
-        <img src="img\profilepic.jpg" alt="Avatar" style="width:300px">
+        <img src="img/profilepic.jpg" alt="Avatar" style="width:300px">
     </div>
+
     <div id="contact">
+
         <h2>You can find me:</h2>
-        <!-- Add links to logos -->
+
         <div id="social">
-            <a href="https://t.me/eugengold"><img src="img\telegram.png" alt="Telegram" style="width:50px"></a>
-            <a href="https://vk.com/h_no3"><img src="img\vk.png" alt="VK" style="width:50px"></a>
-            <a href="https://github.com/cuprum-acid"><img src="img\github.png" alt="Github" style="width:50px"></a>
-            <a href="https://www.instagram.com/golden_cuprum/"><img src="img\instagram.png" alt="Instagram" style="width:50px"></a>
+            <a href="https://t.me/eugengold" id="tg-link"><img src="img/telegram.png" alt="Telegram" style="width:50px"></a>
+            <a href="https://vk.com/h_no3" id="vk-link"><img src="img/vk.png" alt="VK" style="width:50px"></a>
+            <a href="https://github.com/cuprum-acid" id="gh-link"><img src="img/github.png" alt="Github" style="width:50px"></a>
+            <a href="https://www.instagram.com/golden_cuprum/" id="inst-link"><img src="img/instagram.png" alt="Instagram" style="width:50px"></a>
         </div>
-        <h2>Email:</h2>
-        <h3>e.bobkunov@innopolis.university</h3>
+
+        
+        <h2 style="margin-bottom: 20px;">Email:</h2>
+        <div style="float: left; margin-left: 20px;">
+        <a href="mailto:e.bobkunov@innopolis.university" id="email"><img src="img/email.png" alt="Email" style="width:50px"></a>
+        </div>
+        <div style="float: left; margin-left: 10px;" >
+        <a href="mailto:e.bobkunov@innopolis.university"><h5>e.bobkunov@innopolis.university</h5></a>
+        </div>
         
     </div>
   </div>
@@ -196,20 +201,6 @@
       <p>Now I am a first year bachelor student at Innopolis University. Group CS-03.</p>
       <p>Graduation year — 2026</p>
     </section>
-
-    <!-- <section>
-      <h2>Experience &#9203;</h2>
-      <ul>
-        <li>
-          <h3>Job Title</h3>
-          <p>Company Name, Location</p>
-          <p>Start Date - End Date</p>
-          <ul>
-            <li>Description of your responsibilities and achievements</li>
-          </ul>
-        </li>
-      </ul>
-    </section> -->
 
     <section>
       <h2>Skills &#128736;</h2>
@@ -242,21 +233,21 @@
     <p>Here are some of my favorite alboums:</p>
     <div id="albums">
         <figure>
-            <p><a href="https://music.yandex.ru/album/4326888"><img src="img\tank.jpg" style="width: 300px;"></a></p>
+            <p><a href="https://music.yandex.ru/album/4326888"><img src="img/tank.jpg" style="width: 300px;"></a></p>
             <figcaption>Дайте танк (!) — См. рис. 1</figcaption>
         </figure>
         <figure>
-            <p><a href="https://music.yandex.ru/album/1891787"><img src="img\msi.jpg" style="width: 300px"></a></p>
+            <p><a href="https://music.yandex.ru/album/1891787"><img src="img/msi.jpg" style="width: 300px"></a></p>
             <figcaption>Mindless Self Indulgence — If</figcaption>
         </figure>
         <figure>
-            <p><a href="https://music.yandex.ru/album/5427970"><img src="img\guns.jpg" style="width: 300px"></a></p>
+            <p><a href="https://music.yandex.ru/album/5427970"><img src="img/guns.jpg" style="width: 300px"></a></p>
             <figcaption>Guns N' Roses — Use Your Illusion II</figcaption>
         </figure>
     </div>
     <h3>Also you can check my playlists on Yandex Music: </h3>
     <div id="yandexmusic">
-    <iframe frameborder="0" style="border:none;width:720px;height: 480px;" width="720" height="480" src="https://music.yandex.ru/iframe/#playlist/jony.zh/3">Слушайте <a href='https://music.yandex.ru/users/jony.zh/playlists/3'>Мне нравится</a> — <a href='https://music.yandex.ru/users/jony.zh'>Женя</a> на Яндекс Музыке</iframe>
+    <iframe frameborder="0" style="border:none;width:720px;height: 480px;" width="720" height="480" src="https://music.yandex.ru/iframe/#playlist/jony.zh/3"><a href='https://music.yandex.ru/users/jony.zh/playlists/3'></a><a href='https://music.yandex.ru/users/jony.zh'></a></iframe>
     </div>
   </div>
 
@@ -264,15 +255,15 @@
     <h1>My favorite games &#127918;</h1>
     <div id="gamelogos">
         <figure>
-            <p><a href="https://store.steampowered.com/app/8930/Sid_Meiers_Civilization_V/"><img src="img\civ.webp"></a></p>
+            <p><a href="https://store.steampowered.com/app/8930/Sid_Meiers_Civilization_V/"><img src="img/civ.webp"></a></p>
             <figcaption>Sid Meier's Civilization V</figcaption>
         </figure>
         <figure>
-          <p><a href="https://store.steampowered.com/app/413150/Stardew_Valley/"><img src="img\stardew.png"></a></p>
+          <p><a href="https://store.steampowered.com/app/413150/Stardew_Valley/"><img src="img/stardew.png"></a></p>
           <figcaption>Stardew Valley</figcaption>
         </figure>       
         <figure>
-          <p><a href="https://store.steampowered.com/app/219150/Hotline_Miami/"><img src="img\hotline.webp"></a></p>
+          <p><a href="https://store.steampowered.com/app/219150/Hotline_Miami/"><img src="img/hotline.webp"></a></p>
           <figcaption>Hotline Miami</figcaption>
         </figure>  
         
