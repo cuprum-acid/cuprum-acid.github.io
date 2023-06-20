@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Comic</title>
+  
+  <style>
+body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+    }
+
+    .comic-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .comic-image {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .comic-title {
+      margin: 5px;
+    }
+
+    .comic-date {
+      margin: 0;
+      color: #999;
+    }
+
+    .comic-button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      border: 1px solid #999;
+      border-radius: 5px;
+      background-color: #fff;
+      color: #999;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .comic-button:hover {
+      border-color: #000;
+      color: #000;
+    }
+
+    .comic-button:active {
+      background-color: #000;
+      color: #fff;
+    }
+
+    .comic-button:focus {
+      outline: none;
+    }
+
+    .comic-button:disabled {
+      border-color: #ccc;
+      color: #ccc;
+      cursor: default;
+    }
+
+    .comic-button:disabled:hover {
+      border-color: #ccc;
+      color: #ccc;
+    }
+
+    .comic-button:disabled:active {
+      background-color: #fff;
+      color: #ccc;
+    }
+
+    .comic-button:disabled:focus {
+      outline: none;
+    }
+
+    #back {
+      margin-top: 20px;
+      padding: 10px 20px;
+      border: 1px solid #999;
+      border-radius: 5px;
+      background-color: #fff;
+      color: #999;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    #back:hover {
+      border-color: #000;
+      color: #000;
+    }
+
+    #back:active {
+      background-color: #000;
+      color: #fff;
+    }
+
+    #back:focus {
+      outline: none;
+    }
+
+    #back:disabled {
+      border-color: #ccc;
+      color: #ccc;
+      cursor: default;
+    }
+
+    #back:disabled:hover {
+      border-color: #ccc;
+      color: #ccc;
+    }
+
+    #back:disabled:active {
+      background-color: #fff;
+      color: #ccc;
+    }
+
+    #back:disabled:focus {
+      outline: none;
+    }
+
+    #nav {
+      height: 100%;
+      font-family: Arial, sans-serif;
+    }
+
+    
+
+  </style>
+
+</head>
+
+<body>
+  <div id="nav">
+  <a href="index.html"><button id="back">Back to my page</button></a>
+  </div>
+  <div class="comic-container">
+    <img class="comic-image" src="img/load.gif" alt="The comic didn't load, please wait" >
+    <h3 class="comic-title"></h3>
+    <p class="comic-date"></p>
+    <button class="comic-button">Next comic</button>
+  </div>
+
+  <script>
+
+    const fetchComicId = (email) => {
+      return fetch(`https://fwd.innopolis.app/api/hw2?email=${email}`)
+    .then(response => response.text())
+    .then(data => {
+      return data;
+      });
+    };
+
+    const fetchComicDetails = (comicId) => {
+      return fetch(`https://fwd.innopolis.university/api/comic?id=${comicId}`)
+      .then(response => response.json())
+      .then(comicData => {
+        return comicData;
+      });
+    };
+
+const displayComic = (comicData) => {
+  const comicContainer = document.querySelector('.comic-container');
+  const comicImage = comicContainer.querySelector('.comic-image');
+  const comicTitle = comicContainer.querySelector('.comic-title');
+  const comicDate = comicContainer.querySelector('.comic-date');
+
+  comicImage.src = comicData.img;
+  comicImage.alt = comicData.alt;
+  comicTitle.textContent = comicData.safe_title;
+  comicDate.textContent = new Date(comicData.year, comicData.month - 1, comicData.day).toLocaleDateString();
+};
+
+const handleError = (error) => {
+  console.error(error);
+};
+
+// Usage
+const email = 'e.bobkunov@innopolis.university';
+const comicButton = document.querySelector('.comic-button');
+
+fetchComicId(email)
+  .then(comicId => fetchComicDetails(comicId))
+  .then(comicData => displayComic(comicData))
+  .catch(error => handleError(error));
+
+comicButton.addEventListener('click', () => { 
+  fetchComicId(email)
+  .then(comicButton.disabled = true) 
+  .then(comicButton.textContent = 'Loading...')
+  .then(comicId => fetchComicDetails(comicId))
+  .then(comicData => displayComic(comicData))
+  .then(comicButton.disabled = false)
+  .then(comicButton.textContent = 'Next comic')
+  .catch(error => handleError(error));
+});
+  </script>
+</body>
+</html>
