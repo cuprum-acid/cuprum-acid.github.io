@@ -1,0 +1,17 @@
+{
+  "name": "cuprum-acid.github.io",
+  "version": "1.0.0",
+  "description": "personal website",
+  "type": "module",
+  "main": "main.js",
+  "scripts": {
+    "build": "rollup --watch --config rollup.config.js"
+  },
+  "author": "Evgeny Bobkunov",
+  "license": "ISC",
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.1.0",
+    "@rollup/plugin-terser": "^0.4.3",
+    "rollup": "^3.26.0"
+  }
+}
