@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { onMount } from "svelte";
-	import { formatDistanceToNow } from "date-fns";
-	import spinner from "$lib/images/load.gif";
+	import { onMount } from 'svelte';
+	import { formatDistanceToNow } from 'date-fns';
+	import spinner from '$lib/images/load.gif';
 
 	interface ComicDetailsResponse {
 		img: string;
@@ -13,59 +13,37 @@
 	}
 
 	let comicData: ComicDetailsResponse;
-	let email = "e.bobkunov@innopolis.university";
+	let email = 'e.bobkunov@innopolis.university';
 	let loading = false;
 
 	const fetchComicId = async (): Promise<string> => {
-		const response = await fetch(
-			`https://fwd.innopolis.app/api/hw2?email=${email}`
-		);
+		const response = await fetch(`https://fwd.innopolis.app/api/hw2?email=${email}`);
 		const data = await response.text();
 		return data;
 	};
 
-	const fetchComicDetails = async (
-		comicId: string
-	): Promise<ComicDetailsResponse> => {
-		const response = await fetch(
-			`https://fwd.innopolis.university/api/comic?id=${comicId}`
-		);
+	const fetchComicDetails = async (comicId: string): Promise<ComicDetailsResponse> => {
+		const response = await fetch(`https://fwd.innopolis.university/api/comic?id=${comicId}`);
 		const comicData: ComicDetailsResponse = await response.json();
 		return comicData;
 	};
 
 	const displayComic = (): void => {
-		const comicContainer = document.querySelector(".comic-container");
-		const comicImage = comicContainer?.querySelector(
-			".comic-image"
-		) as HTMLImageElement;
-		const comicTitle = comicContainer?.querySelector(
-			".comic-title"
-		) as HTMLElement;
-		const comicDate = comicContainer?.querySelector(
-			".comic-date"
-		) as HTMLElement;
-		const comicAgo = comicContainer?.querySelector(
-			".comic-ago"
-		) as HTMLElement;
+		const comicContainer = document.querySelector('.comic-container');
+		const comicImage = comicContainer?.querySelector('.comic-image') as HTMLImageElement;
+		const comicTitle = comicContainer?.querySelector('.comic-title') as HTMLElement;
+		const comicDate = comicContainer?.querySelector('.comic-date') as HTMLElement;
+		const comicAgo = comicContainer?.querySelector('.comic-ago') as HTMLElement;
 
 		if (comicImage && comicTitle && comicDate) {
 			comicImage.src = comicData.img;
 			comicImage.alt = comicData.alt;
 			comicTitle.textContent = comicData.safe_title;
 
-			const date = new Date(
-				comicData.year,
-				comicData.month - 1,
-				comicData.day
-			);
+			const date = new Date(comicData.year, comicData.month - 1, comicData.day);
 			comicDate.textContent = date.toLocaleDateString();
-			comicAgo.textContent = formatDistanceToNow(date) + " ago";
+			comicAgo.textContent = formatDistanceToNow(date) + ' ago';
 		}
-	};
-
-	const handleError = (error: Error): void => {
-		console.error(error);
 	};
 
 	const loadComic = async (): Promise<void> => {
@@ -75,7 +53,7 @@
 			comicData = await fetchComicDetails(comicId);
 			displayComic();
 		} catch (error) {
-			console.error("Error occurred", error);
+			console.error('Error occurred', error);
 		} finally {
 			loading = false;
 		}
@@ -91,11 +69,7 @@
 
 <section>
 	<div class="comic-container">
-		<img
-			class="comic-image"
-			src={spinner}
-			alt="The comic didn't load, please wait"
-		/>
+		<img class="comic-image" src={spinner} alt="The comic didn't load, please wait" />
 		<h3 class="comic-title">Comics</h3>
 		<p class="comic-date" />
 		<p class="comic-ago" />

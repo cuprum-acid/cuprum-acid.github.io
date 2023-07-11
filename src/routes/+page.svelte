@@ -1,6 +1,6 @@
 <script>
-	import Profile from "./Profile.svelte";
-	import Bio from "./Bio.svelte";
+	import Profile from './Profile.svelte';
+	import Bio from './Bio.svelte';
 </script>
 
 <svelte:head>

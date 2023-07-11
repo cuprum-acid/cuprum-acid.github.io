@@ -1,5 +1,5 @@
 <script>
-	import { page } from "$app/stores";
+	import { page } from '$app/stores';
 	import { base } from '$app/paths';
 </script>
 
@@ -8,21 +8,13 @@
 
 	<nav>
 		<ul>
-			<li aria-current={$page.url.pathname === "/" ? "page" : undefined}>
+			<li aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
 				<a href="{base}/">Home</a>
 			</li>
-			<li
-				aria-current={$page.url.pathname === "/comic"
-					? "page"
-					: undefined}
-			>
+			<li aria-current={$page.url.pathname === '/comic' ? 'page' : undefined}>
 				<a href="{base}/comic">Comic</a>
 			</li>
-			<li
-				aria-current={$page.url.pathname.startsWith("/projects")
-					? "page"
-					: undefined}
-			>
+			<li aria-current={$page.url.pathname.startsWith('/projects') ? 'page' : undefined}>
 				<a href="{base}/projects">Projects</a>
 			</li>
 		</ul>
@@ -63,9 +55,9 @@
 		height: 100%;
 	}
 
-	li[aria-current="page"]::before {
+	li[aria-current='page']::before {
 		--size: 6px;
-		content: "";
+		content: '';
 		width: 0;
 		height: 0;
 		position: absolute;
