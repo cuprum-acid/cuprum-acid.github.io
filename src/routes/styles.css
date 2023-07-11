@@ -1,0 +1,62 @@
+@import '@fontsource/fira-mono';
+
+:root {
+	font-family: Arial, sans-serif;
+	margin: 0px;
+}
+
+body {
+	min-height: 100vh;
+	margin: 0;
+	background-attachment: fixed;
+	background-color: var(--color-bg-1);
+	background-size: 100vw 100vh;
+	background-image: radial-gradient(50% 50% at 50% 50%,
+			rgba(255, 255, 255, 0.75) 0%,
+			rgba(255, 255, 255, 0) 100%),
+		linear-gradient(180deg, var(--color-bg-0) 0%, var(--color-bg-1) 15%, var(--color-bg-2) 50%);
+}
+
+
+div#leftbar {
+	float: left;
+	width: 300px;
+	height: 100%;
+	padding: 20px;
+	color: #534340;
+}
+
+div#photo {
+	width: 300px;
+	height: 300px;
+	overflow: hidden;
+	border-radius: 50%;
+	border: 5px solid #fff;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	font-size: 16px;
+}
+
+div#social {
+	margin-top: 20px;
+	display: flex;
+	justify-content: space-evenly;
+	margin-bottom: 40px;
+}
+
+button#comic {
+	background-color: #85736f;
+	color: #fff;
+	padding: 10px;
+	border: none;
+	border-radius: 5px;
+	font-size: 16px;
+	cursor: pointer;
+	text-decoration: none;
+
+	margin-left: 80px;
+}
+
+button#comic:hover {
+
+	background-color: #534340;
+}

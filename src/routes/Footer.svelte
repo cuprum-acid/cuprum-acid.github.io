@@ -9,6 +9,7 @@
         padding: 10px;
         text-align: center;
         font-size: 14px;
+        margin-top: auto; /* Pushes the footer to the bottom */
     }
     p {
         margin: 5px 0;
