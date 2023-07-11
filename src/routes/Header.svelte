@@ -9,12 +9,12 @@
 	<nav>
 		<ul>
 			<li aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
-				<a href="/ ">Home</a>
+				<a href="{base}/">Home</a>
 			</li>
 			<li aria-current={$page.url.pathname === '/comic' ? 'page' : undefined}>
 				<a href="{base}/comic">Comic</a>
 			</li>
-			<li aria-current={$page.url.pathname.startsWith('/projects') ? 'page' : undefined}>
+			<li aria-current={$page.url.pathname === '/projects' ? 'page' : undefined}>
 				<a href="{base}/projects">Projects</a>
 			</li>
 		</ul>
