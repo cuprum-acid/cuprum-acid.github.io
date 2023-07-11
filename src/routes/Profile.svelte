@@ -9,7 +9,7 @@
 
 <div id="leftbar">
 	<div id="photo">
-		<img src={profilepic} alt="Avatar" style="width:300px" />
+		<img src={base + profilepic} alt="Avatar" style="width:300px" />
 	</div>
 
 	<div id="contact">
