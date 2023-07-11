@@ -4,6 +4,7 @@
 	import vk from '$lib/images/vk.png';
 	import github from '$lib/images/github.png';
 	import email from '$lib/images/email.png';
+	import { base } from '$app/paths';
 </script>
 
 <div id="leftbar">
@@ -31,7 +32,7 @@
 	<style>
 	</style>
 
-	<a href="/comic" id="comic"
+	<a href="{base}/comic" id="comic"
 		><button id="comic" style="margin-top: 20px; margin-left:80px">Get some comic </button></a
 	>
 </div>
