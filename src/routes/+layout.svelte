@@ -4,6 +4,10 @@
 	import './styles.css';
 </script>
 
+<svelte:head>
+	<meta name="author" content="Evgeny Bobkunov" />
+</svelte:head>
+
 <div class="app">
 	<Header />
 
