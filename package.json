@@ -8,7 +8,9 @@
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
-		"format": "prettier --plugin-search-dir . --write ."
+		"format": "prettier --plugin-search-dir . --write .",
+		"prepare": "husky install",
+		"lint-staged": "prettier --plugin-search-dir . --write . && prettier --plugin-search-dir . --check . && eslint ."
 	},
 	"devDependencies": {
 		"@fontsource/fira-mono": "^4.5.10",
@@ -29,7 +31,10 @@
 		"svelte-check": "^3.4.3",
 		"tslib": "^2.4.1",
 		"typescript": "^5.1.6",
-		"vite": "^4.3.6"
+		"vite": "^4.3.6",
+		"husky": "^8.0.3",
+		"lint-staged": "^13.2.3",
+		"vitest": "^0.32.2"
 	},
 	"type": "module",
 	"dependencies": {
@@ -37,6 +42,7 @@
 		"date-fns": "^2.30.0",
 		"flowbite": "^1.7.0",
 		"flowbite-svelte": "^0.39.2",
-		"tailwind-merge": "^1.13.2"
+		"tailwind-merge": "^1.13.2",
+		"moment": "^2.29.4"
 	}
 }
